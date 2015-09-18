@@ -12,18 +12,17 @@ using namespace std;
 
 //Interface
 template<class T> class Node {
-private:
-    bool isNodeHead;
-
 public:
-    Node<T>* head;
-    Node<T>* next;
-    Node<T>* prev;
-    T value;
     Node(T value, Node<T>* head, Node<T>* prev, Node<T>* next);
     Node();
     Node(bool isNodeHead);
     bool isHead();
+    Node<T>* head;
+    Node<T>* next;
+    Node<T>* prev;
+    T value;
+private:
+    bool isNodeHead;
 };
 
 //Implementation

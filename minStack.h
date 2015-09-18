@@ -18,12 +18,10 @@ private:
     T mi;
 public:
     MinStack();
-    T getMin();
+    T min();
     bool push(T value);
     T pop();
 };
-
-
 
 template<class T> MinStack<T>::MinStack() {
     cout<<"MinStack created";
@@ -31,8 +29,8 @@ template<class T> MinStack<T>::MinStack() {
     stackOfMinima = new Stack<T>;
 }
 
-template<class T> T MinStack<T>::getMin() {
-    if(Stack<T>::isEmpty()) {       //Should work without 'Stack<T>::', but it doesn't
+template<class T> T MinStack<T>::min() {
+    if(Stack<T>::empty()) {       //Should work without 'Stack<T>::', but it doesn't
         cout<<"Minimum is not defined\n";
     }
     else {
@@ -42,8 +40,8 @@ template<class T> T MinStack<T>::getMin() {
 
 template<class T> bool MinStack<T>::push(T value) {
     //Call super function which returns true if it inserts the element in the stack successfully
-    bool isStackEmpty = Stack<T>::isEmpty();
-    if(Stack<T>::push(value)) {    
+    bool isStackEmpty = Stack<T>::empty();
+    if(Stack<T>::push(value)) {    //Super function
         if(isStackEmpty || value <= mi) {
             stackOfMinima->push(value);
             mi = value;
@@ -56,7 +54,7 @@ template<class T> bool MinStack<T>::push(T value) {
 }
 
 template<class T> T MinStack<T>::pop() {
-    if(Stack<T>::isEmpty() == false) {     //Should work without 'Stack<T>::', but it doesn't
+    if(Stack<T>::empty() == false) {     //Should work without 'Stack<T>::', but it doesn't
         T removedValue = Stack<T>::pop();
         if(removedValue == stackOfMinima->top()) {
             stackOfMinima->pop();

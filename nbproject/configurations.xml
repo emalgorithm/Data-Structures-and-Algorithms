@@ -4,11 +4,17 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <logicalFolder name="f5" displayName="Container" projectFiles="true">
+        <itemPath>container.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f3" displayName="MinStack" projectFiles="true">
         <itemPath>minStack.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="Node" projectFiles="true">
         <itemPath>node.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f4" displayName="Queue" projectFiles="true">
+        <itemPath>queue.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Stack" projectFiles="true">
         <itemPath>stack.h</itemPath>
@@ -21,6 +27,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>container.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -48,11 +55,17 @@
           <commandLine>-std=c++11</commandLine>
         </ccTool>
       </compileType>
+      <item path="container.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="container.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="minStack.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="node.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="queue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="stack.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -77,11 +90,17 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="container.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="container.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="minStack.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="node.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="queue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="stack.h" ex="false" tool="3" flavor2="0">
       </item>
