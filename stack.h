@@ -54,6 +54,7 @@ template<class T> T Stack<T>::pop() {
         stack->next = nullptr;
         sizeValue--;
         return temp->value;
+                //TODO: fix memory leaks
     }
 }
 

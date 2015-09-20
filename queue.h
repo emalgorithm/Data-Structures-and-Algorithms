@@ -56,6 +56,7 @@ template <class T> T Queue<T>::pop() {
             headT->next = second;
             second->prev = headT;
         }
+        //TODO: fix memory leaks
         sizeValue--;
         return first->value;
     }

@@ -19,6 +19,9 @@
       <logicalFolder name="f2" displayName="Stack" projectFiles="true">
         <itemPath>stack.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="f6" displayName="Vector" projectFiles="true">
+        <itemPath>vector.h</itemPath>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -69,6 +72,8 @@
       </item>
       <item path="stack.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="vector.h" ex="false" tool="3" flavor2="0">
+      </item>
     </conf>
     <conf name="Release" type="1">
       <toolsSet>
@@ -103,6 +108,8 @@
       <item path="queue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="stack.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vector.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>
