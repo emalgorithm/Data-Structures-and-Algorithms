@@ -13,14 +13,14 @@
 using namespace std;
 
 template<class T> class MinStack : public Stack<T> {
+public:
+    MinStack();
+    T min() const;
+    bool push(T value);
+    T pop();
 private:
     Stack<T>* stackOfMinima;
     T mi;
-public:
-    MinStack();
-    T min();
-    bool push(T value);
-    T pop();
 };
 
 template<class T> MinStack<T>::MinStack() {
@@ -29,7 +29,7 @@ template<class T> MinStack<T>::MinStack() {
     stackOfMinima = new Stack<T>;
 }
 
-template<class T> T MinStack<T>::min() {
+template<class T> T MinStack<T>::min() const{
     if(this->empty()) {       
         cout<<"Minimum is not defined\n";
     }

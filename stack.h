@@ -20,7 +20,7 @@ public:
     Stack(size_t maxSize = 50000000);
     bool push(T value);
     T pop();
-    T top();
+    T top() const;
 private:
     Node<T>* stack;
 };
@@ -58,7 +58,7 @@ template<class T> T Stack<T>::pop() {
     }
 }
 
-template<class T> T Stack<T>::top() {
+template<class T> T Stack<T>::top() const{
     if(empty()) {
         cout<<"The stack is empty\n";
     }

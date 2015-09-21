@@ -13,9 +13,9 @@
 class Container {
 public:
     Container(size_t maxSize = 50000000);
-    size_t size();
-    bool empty();
-    bool full();
+    size_t size() const;
+    bool empty() const;
+    bool full() const;
     
 protected:
     size_t sizeValue;

@@ -16,7 +16,7 @@ public:
     Queue(size_t maxSize = 50000000);
     bool push(T value);
     T pop();
-    T front();
+    T front() const;
 private:
     Node<T>* queue;           
 };
@@ -62,7 +62,7 @@ template <class T> T Queue<T>::pop() {
     }
 }
 
-template <class T> T Queue<T>::front() {
+template <class T> T Queue<T>::front() const{
     if(empty()) {
         cout<<"The queue is empty\n";
     }

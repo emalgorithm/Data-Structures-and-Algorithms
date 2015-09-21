@@ -16,7 +16,7 @@ public:
     Vector(size_t reservedSize = 2);
     void resize(size_t newReservedSize);
     void resize(size_t newReservedSize, T value);
-    T back();
+    T back() const;
     bool push_back(T value);
     T pop_back();
 private:
@@ -49,7 +49,7 @@ template <class T> void Vector<T>::resize(size_t newReservedSize, T value) {
     }
 }
 
-template <class T> T Vector<T>::back() {
+template <class T> T Vector<T>::back() const{
     if(size() == 0) {
         cout<<"The vector is empty, impossible to show last element\n";
     }

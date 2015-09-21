@@ -16,7 +16,7 @@ public:
     Node(T value, Node<T>* head, Node<T>* prev, Node<T>* next);
     Node();
     Node(bool isNodeHead);
-    bool isHead();
+    bool isHead() const;
     Node<T>* head;
     Node<T>* next;
     Node<T>* prev;
@@ -48,7 +48,7 @@ template <class T> Node<T>::Node(bool isNodeHead) {
     this->isNodeHead = isNodeHead;
 }
 
-template <class T> bool Node<T>::isHead() {
+template <class T> bool Node<T>::isHead() const{
     return isNodeHead;
 }
 

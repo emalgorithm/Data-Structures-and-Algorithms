@@ -4,14 +4,14 @@ Container::Container(size_t maxSize) {
     this->maxSize = maxSize;
 }
 
-size_t Container::size() {
+size_t Container::size() const{
     return sizeValue;
 }
 
-bool Container::empty() {
+bool Container::empty() const{
     return size() == 0;
 }
 
-bool Container::full() {
+bool Container::full() const{
     return size() == maxSize;
 }
