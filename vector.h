@@ -11,14 +11,18 @@
 #include "container.h"
 #include <iostream>
 
+
 template <class T> class Vector : Container {
 public:
+    typedef T* Iterator;
     Vector(size_t reservedSize = 2);
     void resize(size_t newReservedSize);
     void resize(size_t newReservedSize, T value);
     T back() const;
     bool push_back(T value);
     T pop_back();
+    Iterator begin() { return array; }
+    Iterator end() { return array + sizeValue; }
 private:
     T* array;
     size_t reservedSize;
@@ -73,6 +77,8 @@ template <class T> T Vector<T>::pop_back() {
         return array[--sizeValue];
     }
 }
+
+
 
 #endif	/* VECTOR_H */
 
