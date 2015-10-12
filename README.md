@@ -1,2 +1,3 @@
 # Data-Structures-and-Algorithms
-A C++ library containing many Data Structures and Algorithms implemented without using STL classes.
+This repository contains my implementations of some of the most famous Data Structures and Algoritmhs and can be a good resource for programming competitions as well as for
+reference.
