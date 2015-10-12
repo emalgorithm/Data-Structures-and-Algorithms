@@ -2,7 +2,7 @@
 
 
 const int MAX_N = 1000000;
-const int INF = 2 << 31;
+const int INF = 1 << 30;
 //Storing the graph in an adjacency list lead to a O(V) complexity
 //The vector of ints 'distance' contains the distance of each node from the source, and it's initially set to infinite
 std :: vector< int > graph[MAX_N]; 
