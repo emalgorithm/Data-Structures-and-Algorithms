@@ -1,6 +1,5 @@
 #include <queue>
 
-
 const int MAX_N = 1000000;
 const int INF = 1 << 30;
 //Storing the graph in an adjacency list lead to a O(V) complexity
