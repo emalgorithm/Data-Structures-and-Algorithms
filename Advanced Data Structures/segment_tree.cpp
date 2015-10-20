@@ -1,10 +1,11 @@
-const int MAX_N = 1000000;
+#include <vector>
 
 class segment_tree {
 private:
-    int array[MAX_N];
-    int segment_tree_array[3 * MAX_N];
+    vector<int> array;
+    vector<int> segment_tree_array;
     int size;
+
     void build(int pos, int start, int end) {
         if(start == end) {
             segment_tree_array[pos] = start;
@@ -25,6 +26,7 @@ private:
             }
         }
     }
+
     int rmq(int pos, int start, int end, int queryStart, int queryEnd) {
         if(start > queryEnd || end < queryStart) {
         return -1;
@@ -51,15 +53,39 @@ private:
             return rightIndex;
         }
     }
-public:
-    segment_tree(int input_array[], int input_size) {
-        size = input_size;
-        for(int i = 0; i < size; i++) {
-            array[i] = input_array[i];
+    void update_private(int pos, int start, int end, int index) {
+        if(start == end && start == index) {
+            return;
         }
+        if(start > index || end < index) {
+            return;
+        }
+        int middle = (start + end) / 2;
+        int leftSon =(pos << 1);
+        int rightSon = (pos << 1) + 1; 
+        update_private(leftSon, start, middle, index);
+        update_private(rightSon, middle + 1, end, index);
+        int leftIndex = segment_tree_array[leftSon];
+        int rightIndex = segment_tree_array[rightSon];
+        if(array[leftIndex] <= array[rightIndex]) {
+            segment_tree_array[pos] = leftIndex;
+        }
+        else {
+            segment_tree_array[pos] = rightIndex;
+        }
+    }
+public:
+    segment_tree(const vector<int> &input_array) {
+        size = input_array.size();
+        array = input_array;
+        segment_tree_array.assign(4 * size, 0);
         build(1, 0, size - 1);
     }
     int range_minimum_query(int queryStart, int queryEnd) {
         return rmq(1, 0, size - 1, queryStart, queryEnd);
+    }
+    void update(int index, int value) {
+        array[index] = value;
+        update_private(1, 0, size - 1, index);
     }
 };
