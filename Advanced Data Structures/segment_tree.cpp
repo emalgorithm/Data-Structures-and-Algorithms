@@ -85,7 +85,7 @@ public:
         return rmq(1, 0, size - 1, queryStart, queryEnd);
     }
     void update(int index, int value) {
-        array[index] = value;
+        array[index] += value;
         update_private(1, 0, size - 1, index);
     }
 };
