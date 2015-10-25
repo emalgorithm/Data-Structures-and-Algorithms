@@ -2,38 +2,26 @@
 //O(N) preprocessing and O(sqrt(N) per query using a technique called
 //'Square root decomposition'
 //After having construct the tree in an adjacency list, it is needed to call
-//the two first function for the preprocessing in this way:
-//findParantsAndLevel(root, root);
+//the 'findAncestor'function for the preprocessing in this way:
 //findAncestor(root, root, sqrt(height));
 //After that it is possible to call the function LCA
+#include <vector>
 
 const int MAX_N = 100000;
 
-vector < int > tree[MAX_N];
+std :: vector < int > tree[MAX_N];
 bool visited[MAX_N] = {false};
 int ancestor[MAX_N];
 int level[MAX_N];
 int parent[MAX_N];
-int height = 0;
+int height; //Set this value as desired. If it's not given, can be computed with a DFS
 
-void findParentsAndLevel(int node, int root) {
+void findAncestor(int node, int root, int heightSqrt) {
     visited[node] = true;
     if(node == root) {
         level[node] = 0;
         parent[node] = node;
     }
-    for(int i = 0; i < tree[node].size(); i++) {
-        int son = tree[node][i];
-        if(visited[son] == false) {
-            level[son] = level[node] + 1;
-            parent[son] = node;
-            height = max(height, level[son] + 1);
-            findParentsAndLevel(son, root);
-        }
-    }
-}
-
-void findAncestor(int node, int root, int heightSqrt) {
     if(level[node] < heightSqrt) {
         ancestor[node] = root;
     }
@@ -47,7 +35,10 @@ void findAncestor(int node, int root, int heightSqrt) {
     }
     for(int i = 0; i < tree[node].size(); i++) {
         int son = tree[node][i];
-        if(visited[son] == 0) {
+        if(visited[son] == false) {
+            level[son] = level[node] + 1;
+            parent[son] = node;
+            height = max(height, level[son] + 1);
             findAncestor(son, root, heightSqrt);
         }
     }
