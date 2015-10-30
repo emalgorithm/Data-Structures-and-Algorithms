@@ -6,6 +6,7 @@
 //findAncestor(root, root, sqrt(height));
 //After that it is possible to call the function LCA
 #include <vector>
+#include <utility> //swap
 
 const int MAX_N = 100000;
 
@@ -46,7 +47,7 @@ void findAncestor(int node, int root, int heightSqrt) {
 
 int LCA(int firstNode, int secondNode) {
     if(level[firstNode] > level[secondNode]) {
-        swap(firstNode, secondNode);
+        std :: swap(firstNode, secondNode);
     }
     while(ancestor[firstNode] != ancestor[secondNode]) {
         secondNode = ancestor[secondNode];
